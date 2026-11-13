@@ -1,0 +1,503 @@
+/* =========================================================================
+   English Hub - Obsidian Plugin Stylesheet
+   ========================================================================= */
+
+.eh-root {
+  --eh-accent: var(--interactive-accent, #6366f1);
+  --eh-card-bg: color-mix(in srgb, var(--background-secondary) 86%, transparent);
+  --eh-border: var(--background-modifier-border);
+  --eh-radius: 12px;
+  --eh-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+
+  padding: 20px 24px;
+  max-width: 1360px;
+  margin: 0 auto;
+  color: var(--text-normal);
+  font-family: var(--font-interface);
+}
+
+.eh-root.eh-compact {
+  padding: 12px 14px;
+  --eh-radius: 8px;
+}
+
+/* Top Navigation Bar */
+.eh-topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 18px;
+  margin-bottom: 22px;
+  border-bottom: 1px solid var(--eh-border);
+}
+
+.eh-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.eh-brand-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--eh-accent) 16%, transparent);
+  color: var(--eh-accent);
+}
+
+.eh-brand-title {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.eh-brand-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.eh-nav-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.eh-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: var(--background-secondary);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.eh-nav-btn:hover {
+  color: var(--text-normal);
+  border-color: var(--eh-border);
+}
+
+.eh-nav-btn.is-active {
+  background: color-mix(in srgb, var(--eh-accent) 16%, var(--background-secondary));
+  color: var(--eh-accent);
+  border-color: color-mix(in srgb, var(--eh-accent) 40%, transparent);
+  font-weight: 600;
+}
+
+/* Glass Cards & Containers */
+.eh-glass-card {
+  background: var(--eh-card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--eh-border);
+  border-radius: var(--eh-radius);
+  box-shadow: var(--eh-shadow);
+  padding: 18px;
+}
+
+.eh-compact .eh-glass-card {
+  padding: 12px;
+}
+
+.eh-welcome-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+  border-left: 4px solid var(--eh-accent);
+}
+
+.eh-dashboard-widgets-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.eh-widget-shell.is-dragging {
+  opacity: 0.55;
+  border: 1px dashed var(--eh-accent);
+}
+
+.eh-widget-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.eh-widget-title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.eh-widget-title-group h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.eh-drag-handle {
+  cursor: grab;
+  color: var(--text-faint);
+  display: inline-flex;
+}
+
+/* Overview Metrics Grid */
+.eh-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.eh-metric-card {
+  padding: 14px;
+  border-radius: 10px;
+  background: var(--background-primary);
+  border: 1px solid var(--eh-border);
+}
+
+.eh-metric-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.eh-metric-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.eh-metric-icon {
+  color: var(--eh-accent);
+}
+
+.eh-metric-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.eh-metric-sub {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+}
+
+/* Word of the Day & Daily Challenge */
+.eh-wotd-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 16px;
+}
+
+.eh-wotd-card,
+.eh-challenge-card {
+  padding: 16px;
+  border-radius: 10px;
+  background: var(--background-primary);
+  border: 1px solid var(--eh-border);
+}
+
+.eh-wotd-title {
+  margin: 8px 0 4px;
+  font-size: 1.5rem;
+  color: var(--eh-accent);
+}
+
+.eh-wotd-translation,
+.eh-vocab-translation,
+.eh-answer-translation {
+  font-size: 0.95rem;
+  color: var(--text-normal);
+  font-weight: 500;
+  margin: 4px 0;
+}
+
+.eh-challenge-input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--eh-border);
+  background: var(--background-secondary);
+  color: var(--text-normal);
+}
+
+/* Quick Actions Grid */
+.eh-quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 12px;
+}
+
+.eh-qa-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--background-primary);
+  border: 1px solid var(--eh-border);
+  cursor: pointer;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+
+.eh-qa-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--eh-accent);
+}
+
+.eh-qa-card.is-unavailable {
+  opacity: 0.65;
+}
+
+.eh-qa-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--eh-accent) 15%, transparent);
+  color: var(--eh-accent);
+}
+
+.eh-qa-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.eh-qa-plugin {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Progress Rings & Bars */
+.eh-skills-rings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+  text-align: center;
+}
+
+.eh-skill-ring-card {
+  padding: 14px;
+  border-radius: 10px;
+  background: var(--background-primary);
+  border: 1px solid var(--eh-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eh-progress-ring-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eh-progress-ring-label {
+  position: absolute;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.eh-progress-bar-track {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--background-modifier-border);
+  overflow: hidden;
+  margin: 8px 0;
+}
+
+.eh-progress-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--eh-accent);
+  transition: width 0.3s ease;
+}
+
+/* Heatmap */
+.eh-heatmap-grid {
+  display: grid;
+  grid-template-columns: repeat(28, minmax(10px, 1fr));
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.eh-heatmap-cell {
+  aspect-ratio: 1;
+  border-radius: 3px;
+  background: var(--background-modifier-border);
+}
+
+.eh-heat-1 { background: color-mix(in srgb, var(--eh-accent) 30%, var(--background-secondary)); }
+.eh-heat-2 { background: color-mix(in srgb, var(--eh-accent) 55%, var(--background-secondary)); }
+.eh-heat-3 { background: color-mix(in srgb, var(--eh-accent) 80%, var(--background-secondary)); }
+.eh-heat-4 { background: var(--eh-accent); }
+
+.eh-heatmap-legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+}
+
+.eh-heatmap-legend .eh-heatmap-cell {
+  width: 12px;
+  height: 12px;
+}
+
+/* Vocabulary, Grammar & Review Grids */
+.eh-section-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.eh-vocab-stats-bar,
+.eh-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.eh-search-input {
+  flex: 1;
+  min-width: 200px;
+}
+
+.eh-vocab-cards-grid,
+.eh-grammar-grid,
+.eh-review-decks-grid,
+.eh-achievements-grid,
+.eh-planner-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.eh-vocab-card-top,
+.eh-vocab-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.eh-badge-row,
+.eh-btn-group,
+.eh-category-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.eh-category-pills {
+  margin-bottom: 16px;
+}
+
+.eh-pill-btn {
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.eh-pill-btn.is-active {
+  background: var(--eh-accent);
+  color: #ffffff;
+}
+
+.eh-badge {
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--background-modifier-border);
+  font-weight: 600;
+}
+
+.eh-badge-accent {
+  background: color-mix(in srgb, var(--eh-accent) 20%, transparent);
+  color: var(--eh-accent);
+}
+
+/* Timer & Flashcard Modal */
+.eh-mini-timer-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.eh-timer-digits-sm {
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  margin-right: 12px;
+}
+
+.eh-timer-digits-lg {
+  font-size: 3.6rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  margin: 24px 0;
+  color: var(--eh-accent);
+}
+
+.eh-srs-rating-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 16px;
+}
+
+/* Settings Navigation */
+.eh-settings-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.eh-settings-tab-btn.is-active {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .eh-root {
+    padding: 12px;
+  }
+  .eh-heatmap-grid {
+    grid-template-columns: repeat(14, minmax(10px, 1fr));
+  }
+  .eh-srs-rating-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
